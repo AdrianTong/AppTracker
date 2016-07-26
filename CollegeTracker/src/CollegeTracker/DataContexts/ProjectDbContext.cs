@@ -17,7 +17,7 @@ namespace CollegeTracker.DataContexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CollegeTracker;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=localhost;Database=CollegeTracker;Trusted_Connection=True;");
         }
 
         public DbSet<Deadline> Deadlines { get; set; }
