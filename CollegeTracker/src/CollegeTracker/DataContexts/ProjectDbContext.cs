@@ -9,11 +9,16 @@ using CollegeTracker.Models.ChecklistModels;
 
 namespace CollegeTracker.DataContexts
 {
-    public class ApplicationContext : DbContext
+    public class ProjectDbContext : DbContext
     {
-        public ApplicationContext(DbContextOptions<ApplicationContext> options)
+        public ProjectDbContext(DbContextOptions<ProjectDbContext> options)
             : base(options)
         { }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CollegeTracker;Trusted_Connection=True;");
+        }
 
         public DbSet<Deadline> Deadlines { get; set; }
         public DbSet<College> Colleges { get; set; }

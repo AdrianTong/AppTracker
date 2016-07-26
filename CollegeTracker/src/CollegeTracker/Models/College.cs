@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using CollegeTracker.Models.CalendarModels;
@@ -8,6 +9,8 @@ namespace CollegeTracker.Models
 {
     public class College
     {
+        [Key]
+        public Guid ID; 
         public string Name;
 
         public Uri ApplicationUrl;

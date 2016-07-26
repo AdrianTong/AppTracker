@@ -2,13 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 namespace CollegeTracker.Controllers
 {
+    [Authorize]
     public class CalendarController : Controller
     {
-        // GET: Calendar
+        // GET: CalendarC:\Users\Kory\Developer\collegetracker\CollegeTracker\src\CollegeTracker\Controllers\AccountController.cs
         public ActionResult Index()
         {
             return View();
