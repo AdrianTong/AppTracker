@@ -9,10 +9,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+<<<<<<< HEAD
 using CollegeTracker.Data;
+=======
+>>>>>>> origin/master
 using CollegeTracker.DataContexts;
 using CollegeTracker.Models;
 using CollegeTracker.Services;
+
 
 namespace CollegeTracker
 {
@@ -41,11 +45,11 @@ namespace CollegeTracker
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<ApplicationContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddEntityFrameworkStores<ApplicationContext>()
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
@@ -88,6 +92,10 @@ namespace CollegeTracker
                 routes.MapRoute(
                     name: "Calendar",
                     template: "{controller=Calendar}/{action=Index}");
+                routes.MapRoute(
+                    name: "Tasks",
+                    template: "tasks",
+                    defaults: new { controller = "ChecklistTask", action = "Index" });
             });
         }
 

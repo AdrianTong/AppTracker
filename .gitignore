@@ -1,0 +1,6 @@
+CollegeTracker/src/CollegeTracker/bin/*
+CollegeTracker/src/CollegeTracker/obj/*
+CollegeTracker/.vs/CollegeTracker/v14/.suo
+CollegeTracker/src/CollegeTracker/bin/Debug/netcoreapp1.0/CollegeTracker.pdb
+*.suo
+CollegeTracker/src/CollegeTracker/bin/Debug/netcoreapp1.0/CollegeTracker.pdb
