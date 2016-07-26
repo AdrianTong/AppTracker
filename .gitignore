@@ -1,7 +1,7 @@
 CollegeTracker/src/CollegeTracker/bin/
 CollegeTracker/src/CollegeTracker/obj/
-CollegeTracker/src/CollegeTracker/bin/*/*
-CollegeTracker/src/CollegeTracker/obj/*/*
+CollegeTracker/src/CollegeTracker/bin/**/*
+CollegeTracker/src/CollegeTracker/obj/**/*
 *.pdb
 *.suo
 *.dll
