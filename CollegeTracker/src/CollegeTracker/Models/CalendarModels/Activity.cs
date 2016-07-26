@@ -25,7 +25,7 @@ namespace CollegeTracker.Models.CalendarModels
         public int Priority { get; set; }
     }
 
-    enum ActivityPriorities
+enum ActivityPriorities
     {
         Urgent, High, Medium, Low, Optional
     }
