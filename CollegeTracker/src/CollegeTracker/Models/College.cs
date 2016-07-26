@@ -10,7 +10,7 @@ namespace CollegeTracker.Models
     public class College
     {
         [Key]
-        public Guid ID; 
+        public Guid CollegeID; 
         public string Name;
 
         public Uri ApplicationUrl;

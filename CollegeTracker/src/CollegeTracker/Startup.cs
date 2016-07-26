@@ -41,11 +41,11 @@ namespace CollegeTracker
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddDbContext<ApplicationContext>(options =>
+            services.AddDbContext<ProjectDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationContext>()
+                .AddEntityFrameworkStores<ProjectDbContext>()
                 .AddDefaultTokenProviders();
 
             services.AddMvc();

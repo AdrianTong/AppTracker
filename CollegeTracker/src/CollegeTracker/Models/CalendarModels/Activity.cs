@@ -6,25 +6,17 @@ using System.Threading.Tasks;
 
 namespace CollegeTracker.Models.CalendarModels
 {
-    public class Activity
+
+    public class Deadline
     {
         [Key]
-        public Guid Id { get; set; }
+        public Guid DeadlineID { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime? EndDate { get; set; }
         public string Title { get; set; }
         public string Details { get; set; }
-    }
-
-    public class CollegeActivity : Activity
-    {
-        public College College { get; set; }
-        
-    }
-
-    public class Deadline : CollegeActivity
-    {
         public int Priority { get; set; }
+        public College College { get; set; }
     }
 
 enum ActivityPriorities
