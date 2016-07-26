@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CollegeTracker.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using CollegeTracker.DataContexts;
@@ -25,7 +26,7 @@ namespace CollegeTracker.Controllers
         {
             var AuthenticatedUser = await _userManager.GetUserAsync(User);
 
-            using (var context = new ApplicationContext(new DbContextOptions<ApplicationContext>()))
+            using (var context = new ProjectDbContext(new DbContextOptions<ProjectDbContext>()))
             {
                 var userTasks = context.ChecklistTasks.Where(t => t.user.Equals(AuthenticatedUser));
                 return View(userTasks);
@@ -56,7 +57,7 @@ namespace CollegeTracker.Controllers
                     var AuthenticatedUser = await _userManager.GetUserAsync(User);
                     ChecklistTask checklistTask = new ChecklistTask { Content = collection["content"], user = AuthenticatedUser };
 
-                   using (var context = new ApplicationContext(new DbContextOptions<ApplicationContext>()))
+                   using (var context = new ProjectDbContext(new DbContextOptions<ProjectDbContext>()))
                    {
                         context.ChecklistTasks.Add(checklistTask);
                    };
